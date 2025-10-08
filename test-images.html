@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test Images</title>
+    <style>
+        .test-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .test-card {
+            width: 300px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #000;
+            position: relative;
+        }
+
+        .test-card::after {
+            content: attr(data-name);
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+        }
+
+        .youth {
+            background-image: url('images/20250929135717.png');
+        }
+
+        .speaking {
+            background-image: url('images/20250929135746.png');
+        }
+
+        .initiatives {
+            background-image: url('images/20250929135828.jpg');
+        }
+
+        .research {
+            background-image: url('images/20250929140001.jpg');
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Background Images Test</h1>
+    <div class="test-container">
+        <div class="test-card youth" data-name="The Tiger Project"></div>
+        <div class="test-card speaking" data-name="Public Speaking"></div>
+        <div class="test-card initiatives" data-name="Other Initiatives"></div>
+        <div class="test-card research" data-name="Research & Competitions"></div>
+    </div>
+</body>
+
+</html>

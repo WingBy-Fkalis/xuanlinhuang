@@ -1,0 +1,335 @@
+/* Base: 沙土地色调，温暖自然，符合新疆足球主题 */
+:root{--bg:#f2ede4;--surface:#f8f4ed;--ink:#2d1b0f;--muted:#7a5a1a;--brand:#c17309;--brand-weak:#e6a623;--line:#dcc5a1;--card:#faf7f0;--sand:#d4b896;--earth:#a0470a;--warm:#e68a00;--sand-light:#e8d5c4;--sand-dark:#c19a6b;--desert:#b8956f}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:linear-gradient(135deg,var(--bg) 0%,var(--sand-light) 50%,var(--sand) 100%);background-attachment:fixed;color:var(--ink);font-family:"Inter var","Inter","SF Pro Display","Helvetica Neue",Arial,system-ui,-apple-system,Segoe UI;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:1128px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.site-header{position:sticky;top:0;background:rgba(250,248,244,.92);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:700;letter-spacing:.3px}
+.menu{display:flex;gap:20px}
+.nav-link{padding:8px 12px;border-radius:999px;color:var(--muted)}
+.nav-link:hover{color:var(--ink);background:var(--card)}
+.nav-link.emph{font-weight:600;color:var(--ink)}
+
+/* Hero */
+.hero{position:relative;height:64vh;min-height:420px;display:grid;place-items:center;overflow:hidden}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(105%) contrast(105%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(244,241,235,.55),rgba(244,241,235,.85))}
+.hero-inner{position:relative;text-align:center}
+.hero-title{font-size:56px;letter-spacing:.2px;margin:0 0 12px;color:var(--ink);font-weight:700;text-shadow:0 4px 12px rgba(45,27,15,0.3),0 2px 6px rgba(160,71,10,0.4);background:linear-gradient(135deg,var(--ink) 0%,var(--earth) 50%,var(--brand) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:titleGlow 3s ease-in-out infinite alternate;position:relative}
+.hero-sub{max-width:900px;margin:0 auto;color:var(--earth);font-size:20px;font-weight:600;text-shadow:0 2px 4px rgba(45,27,15,0.2);letter-spacing:0.5px;line-height:1.4}
+
+/* Sections */
+.section{padding:60px 0;margin:20px auto;background:linear-gradient(135deg,var(--surface) 0%,var(--card) 100%);border-radius:20px;box-shadow:0 4px 20px rgba(45,27,15,.12);max-width:1128px}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:60px 40px}
+.about h2{font-size:32px;margin-bottom:24px;color:var(--earth)}
+.about p{font-size:18px;line-height:1.7;margin-bottom:16px}
+.about-photo img{border-radius:16px;box-shadow:0 8px 24px rgba(61,41,20,.15)}
+
+/* Apple风格卡片布局 - 放大版本 */
+.quick-entries{
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:60px 0;
+  border-radius:0 !important
+}
+
+/* 主要英雄卡片 - Youth Soccer Project */
+.hero-card-container{margin-bottom:20px}
+.hero-card{
+  display:block;
+  position:relative;
+  height:380px;
+  border-radius:20px;
+  overflow:hidden;
+  text-decoration:none;
+  transition:all .4s cubic-bezier(.25,.46,.45,.94);
+  box-shadow:0 8px 32px rgba(61,41,20,.12)
+}
+.hero-card:hover{
+  transform:scale(1.02) translateY(-8px);
+  box-shadow:0 20px 60px rgba(61,41,20,.25)
+}
+.hero-card:hover .hero-card-content h3{
+  text-shadow:0 3px 12px rgba(0,0,0,0.5);
+  transform:translateY(-2px)
+}
+.hero-card:hover .hero-card-content p{
+  text-shadow:0 2px 8px rgba(0,0,0,0.4);
+  transform:translateY(-1px)
+}
+
+.hero-card-bg{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:linear-gradient(135deg,var(--warm) 0%,var(--earth) 50%,var(--desert) 100%);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  filter:blur(4px);
+  transform:scale(1.1);
+  transition:filter .4s ease, transform .4s ease
+}
+
+/* 确保背景图片显示 */
+.bg-youth,
+.bg-speaking,
+.bg-initiatives,
+.bg-research {
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+}
+.hero-card:hover .hero-card-bg{filter:blur(6px);transform:scale(1.12)}
+
+.hero-card-content{
+  position:relative;
+  z-index:2;
+  height:100%;
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:linear-gradient(135deg,rgba(217,151,6,.65) 0%,rgba(180,83,9,.65) 100%)
+}
+
+.hero-card-content h3{
+  color:white;
+  font-size:32px;
+  font-weight:700;
+  margin:0 0 12px;
+  line-height:1.2;
+  text-shadow:0 2px 8px rgba(0,0,0,0.4);
+  letter-spacing:0.5px;
+  transition:text-shadow 0.3s ease, transform 0.3s ease
+}
+
+.hero-card-content p{
+  color:rgba(255,255,255,0.95);
+  font-size:18px;
+  line-height:1.5;
+  margin:0 0 auto;
+  max-width:600px;
+  text-shadow:0 1px 4px rgba(0,0,0,0.3);
+  font-weight:400;
+  transition:text-shadow 0.3s ease, transform 0.3s ease
+}
+
+.hero-card-content .card-cta{
+  color:rgba(255,255,255,0.95);
+  font-size:16px;
+  font-weight:600;
+  opacity:.9;
+  transition:opacity .3s ease;
+  text-shadow:0 1px 3px rgba(0,0,0,0.3);
+  letter-spacing:0.3px
+}
+.hero-card:hover .hero-card-content .card-cta{
+  opacity:1;
+  text-shadow:0 2px 6px rgba(0,0,0,0.4)
+}
+
+/* 星星装饰 */
+.card-star{
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-size:24px;
+  opacity:0.8;
+  animation:twinkle 2s ease-in-out infinite alternate;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  transition:transform 0.3s ease, opacity 0.3s ease
+}
+
+.hero-card:hover .card-star{
+  opacity:1;
+  transform:rotate(15deg) scale(1.1)
+}
+
+@keyframes twinkle{
+  0%{opacity:0.6}
+  100%{opacity:1}
+}
+
+/* 次要卡片 - 三个一行 */
+.secondary-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px
+}
+
+.secondary-card{
+  display:block;
+  position:relative;
+  height:280px;
+  border-radius:16px;
+  overflow:hidden;
+  text-decoration:none;
+  transition:all .4s cubic-bezier(.25,.46,.45,.94);
+  box-shadow:0 4px 20px rgba(61,41,20,.08)
+}
+.secondary-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 16px 40px rgba(61,41,20,.2)
+}
+.secondary-card:hover .secondary-card-content h3{
+  text-shadow:0 2px 10px rgba(0,0,0,0.6);
+  transform:translateY(-2px)
+}
+.secondary-card:hover .secondary-card-content p{
+  text-shadow:0 1px 6px rgba(0,0,0,0.5);
+  transform:translateY(-1px)
+}
+
+.secondary-card-bg{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:linear-gradient(135deg,var(--sand-light) 0%,var(--sand) 50%,var(--sand-dark) 100%);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  filter:blur(3px);
+  transform:scale(1.1);
+  transition:filter .4s ease, transform .4s ease
+}
+.secondary-card:hover .secondary-card-bg{filter:blur(5px);transform:scale(1.12)}
+
+.secondary-card-content{
+  position:relative;
+  z-index:2;
+  height:100%;
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:rgba(250,248,244,.75)
+}
+
+/* 背景图映射（用户提供后可直接替换文件名） */
+.bg-youth{background-image:url('../../images/20250929135717.png')}
+.bg-speaking{background-image:url('../../images/20250929135746.png')}
+.bg-initiatives{background-image:url('../../images/20250929135828.jpg')}
+.bg-research{background-image:url('../../images/20250929140001.jpg')}
+
+/* 不同主题覆盖层（风沙色渐变） */
+.theme-youth{background:linear-gradient(135deg,rgba(160,71,10,0.5) 0%,rgba(193,115,9,0.4) 30%,rgba(230,138,0,0.3) 100%)}
+.theme-initiatives{background:linear-gradient(135deg,rgba(184,149,111,0.4) 0%,rgba(212,184,150,0.3) 50%,rgba(193,154,107,0.25) 100%)}
+.theme-research{background:linear-gradient(135deg,rgba(122,90,26,0.4) 0%,rgba(160,71,10,0.3) 50%,rgba(230,162,35,0.25) 100%)}
+.theme-speaking{background:linear-gradient(135deg,rgba(193,115,9,0.4) 0%,rgba(230,138,0,0.3) 50%,rgba(232,213,196,0.25) 100%)}
+
+.secondary-card-content h3{
+  color:white;
+  font-size:20px;
+  font-weight:700;
+  margin:0 0 8px;
+  line-height:1.3;
+  text-shadow:0 1px 6px rgba(0,0,0,0.5);
+  letter-spacing:0.3px;
+  transition:text-shadow 0.3s ease, transform 0.3s ease
+}
+
+.secondary-card-content p{
+  color:rgba(255,255,255,0.9);
+  font-size:14px;
+  line-height:1.4;
+  margin:0 0 auto;
+  text-shadow:0 1px 4px rgba(0,0,0,0.4);
+  font-weight:400;
+  transition:text-shadow 0.3s ease, transform 0.3s ease
+}
+
+.secondary-card-content .card-cta{
+  color:rgba(255,255,255,0.85);
+  font-size:14px;
+  font-weight:600;
+  opacity:.8;
+  transition:opacity .3s ease;
+  text-shadow:0 1px 3px rgba(0,0,0,0.3);
+  letter-spacing:0.2px
+}
+.secondary-card:hover .secondary-card-content .card-cta{
+  opacity:1;
+  text-shadow:0 1px 4px rgba(0,0,0,0.4)
+}
+
+/* Interests - 缩小版本 */
+.interests{background:linear-gradient(135deg,var(--surface) 0%,var(--sand-light) 100%);padding:40px 40px}
+.interests h2{margin:0 0 20px;font-size:26px;color:var(--earth)}
+.interest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.interest{background:linear-gradient(135deg,var(--card) 0%,var(--sand-light) 100%);border:1px solid var(--sand);border-radius:12px;padding:18px;transition:transform .2s ease;box-shadow:0 2px 8px rgba(45,27,15,.08)}
+.interest:hover{transform:translateY(-2px)}
+.interest h4{margin:12px 0 8px;font-size:18px;color:var(--earth)}
+.interest p{color:var(--muted);margin:0;line-height:1.5;font-size:14px}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line);background:linear-gradient(135deg,var(--surface) 0%,var(--sand-light) 100%)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;padding:24px 0}
+.contact a{color:var(--brand)}
+
+/* Utilities */
+@media (max-width: 980px){
+  .about{grid-template-columns:1fr;gap:30px;padding:40px 20px}
+  .about h2{font-size:28px}
+  .about p{font-size:16px}
+  .quick-entries{padding:30px 20px}
+  .hero-card{height:280px}
+  .hero-card-content{padding:30px}
+  .hero-card-content h3{font-size:28px}
+  .hero-card-content p{font-size:16px}
+  .secondary-cards{grid-template-columns:1fr;gap:16px}
+  .secondary-card{height:200px}
+  .secondary-card-content{padding:20px}
+  .secondary-card-content h3{font-size:18px}
+  .interest-grid{grid-template-columns:1fr 1fr}
+  .interests{padding:30px 20px}
+  .hero-title{font-size:40px;text-shadow:0 3px 8px rgba(45,27,15,0.3),0 1px 4px rgba(160,71,10,0.4)}
+  .hero-sub{font-size:18px;font-weight:600}
+}
+@media (max-width: 640px){
+  .section{margin:10px auto;border-radius:12px}
+  .about{padding:30px 15px}
+  .quick-entries{padding:20px 15px}
+  .hero-card{height:240px}
+  .hero-card-content{padding:24px}
+  .hero-card-content h3{font-size:24px}
+  .hero-card-content p{font-size:15px}
+  .secondary-card{height:180px}
+  .secondary-card-content{padding:16px}
+  .secondary-card-content h3{font-size:16px}
+  .secondary-card-content p{font-size:13px}
+  .interests{padding:25px 15px}
+  .interest-grid{grid-template-columns:1fr}
+  .hero-sub{font-size:16px;font-weight:600}
+  .hero-title{text-shadow:0 2px 6px rgba(45,27,15,0.3),0 1px 3px rgba(160,71,10,0.4)}
+}
+
+/* 动态效果动画 */
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 4px 12px rgba(45,27,15,0.3), 0 2px 6px rgba(160,71,10,0.4), 0 0 20px rgba(193,115,9,0.2);
+    transform: translateY(0px);
+  }
+  100% {
+    text-shadow: 0 6px 20px rgba(45,27,15,0.4), 0 3px 8px rgba(160,71,10,0.6), 0 0 30px rgba(193,115,9,0.4);
+    transform: translateY(-2px);
+  }
+}
+
+/* 标题悬停效果 */
+.hero-title:hover {
+  animation-duration: 1.5s;
+  transform: translateY(-3px) scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+

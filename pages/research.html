@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Research & Competitions — Thomas Huang</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="../index.html">Xuanlin (Thomas) Huang</a>
+            <nav class="menu">
+                <a href="./youth.html" class="nav-link">The Tiger Project ⭐</a>
+                <a href="./initiatives.html" class="nav-link">Other Initiatives & Programs</a>
+                <a href="./research.html" class="nav-link emph">Research & Competitions</a>
+                <a href="./speaking.html" class="nav-link">Public Speaking</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section container">
+            <h1>Certificates & Awards</h1>
+            <!-- Row A: 向左滚动 -->
+            <div class="marquee row-a">
+                <div class="track">
+                    <img src="../images/Screenshot 2025-09-22 at 12.06.34 AM.png" alt>
+                    <img src="../images/Screenshot 2025-09-22 at 12.07.48 AM.png" alt>
+                    <img src="../images/Screenshot 2025-09-22 at 12.10.04 AM.png" alt>
+                    <img src="../images/Screenshot 2025-09-22 at 12.09.12 AM.png" alt>
+                    <img src="../images/Screenshot 2025-09-22 at 12.10.39 AM.png" alt>
+                    <img src="../images/Screenshot 2025-09-22 at 12.11.50 AM.png" alt>
+                    <img src="../images/Screenshot 2025-09-22 at 12.11.57 AM.png" alt>
+                </div>
+                <!-- <div class="track clone"></div> -->
+            </div>
+            <!-- Row B: 向右滚动，内容不同 -->
+            <div class="marquee row-a">
+                <div class="track">
+                    <img src="../images/Screenshot 2025-09-22 at 12.13.24 AM.png" alt>
+                    <img src="../images/Screenshot 2025-09-22 at 12.13.40 AM.png" alt>
+                    <img src="../images/Screenshot 2025-09-22 at 12.13.50 AM.png" alt>
+                    <img src="../images/Screenshot 2025-09-22 at 12.14.02 AM.png" alt>
+                    <img src="../images/Screenshot 2025-09-22 at 12.15.10 AM.png" alt>
+                    <img src="../images/WSDA regional.jpeg" alt>
+                    <img src="../images/Screenshot 2025-09-22 at 12.16.09 AM.png" alt>
+                    <img src="../images/Screenshot 2025-09-24 at 11.12.16 AM.png" alt>
+                    <img src="../images/Screenshot 2025-09-24 at 11.13.26 AM.png" alt>
+                </div>
+                <!-- <div class="track clone"></div> -->
+            </div>
+        </section>
+
+        <section class="section container">
+            <h2>Research Paper on Soccer & Social Mobility</h2>
+            <p>Drawing on <strong>Bourdieu’s capital framework</strong>, this study <strong>proposes a model</strong>
+                explaining how youth soccer shapes the social mobility of Xinjiang adolescents.</p>
+            <div class="pdf-view">
+                <object data="../files/Soccer and Social Mobility.pdf" type="application/pdf" width="100%" height="680">
+                    <iframe src="../files/Soccer and Social Mobility.pdf" width="100%" height="680"
+                        title="Paper PDF"></iframe>
+                </object>
+            </div>
+        </section>
+
+        <section class="section container">
+            <h2>Writing Sample: John Locke Writing Competition</h2>
+            <div class="pdf-view">
+                <object data="../files/Xuanlin-Huang-Economics-1.pdf" type="application/pdf" width="100%" height="680">
+                    <iframe src="../files/Xuanlin-Huang-Economics-1.pdf" width="100%" height="680"
+                        title="Writing Sample"></iframe>
+                </object>
+            </div>
+        </section>
+
+        <section class="section container">
+            <h2>China Think Big Competition</h2>
+            <div class="pdf-view">
+                <object data="../files/China Thinks Big presentation.pdf" type="application/pdf" width="100%"
+                    height="680">
+                    <iframe src="../files/China Thinks Big presentation.pdf" width="100%" height="680"
+                        title="CTB PDF"></iframe>
+                </object>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        .marquee {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: #fff;
+            margin-bottom: 10px
+        }
+
+        .marquee .track {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            padding: 8px 10px;
+        }
+
+        .marquee img {
+            height: 130px;
+            width: 220px;
+            object-fit: contain;
+            background: #fff;
+            padding: 4px;
+            border-radius: 12px;
+            border: 1px solid var(--line)
+        }
+
+        .row-a .track {
+            animation: scroll-left 26s linear infinite
+        }
+
+        .row-b .track {
+            animation: scroll-right 28s linear infinite
+        }
+
+        /* 使用 flex 不再需要固定列宽 */
+
+        @keyframes scroll-left {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        @keyframes scroll-right {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(50%)
+            }
+        }
+
+        @media(max-width:980px) {
+            .marquee img {
+                height: 96px
+            }
+
+            .marquee .track {
+                grid-auto-columns: calc(30%)
+            }
+        }
+
+        @media(max-width:640px) {
+            .marquee .track {
+                grid-auto-columns: calc(48%)
+            }
+        }
+
+        .pdf-view {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            overflow: hidden;
+            background: #fff
+        }
+    </style>
+
+    <script>
+        // 无缝循环：将每行的内容在同一 track 中复制一遍
+        document.querySelectorAll('.marquee .track').forEach(track => {
+            track.innerHTML = track.innerHTML + track.innerHTML;
+        });
+        // 简易灯箱：点击证书放大查看
+        (function () {
+            const overlay = document.createElement('div');
+            overlay.style.cssText = 'position:fixed;inset:0;background:rgba(15,23,42,.72);backdrop-filter:blur(2px);display:none;align-items:center;justify-content:center;z-index:60';
+            const close = document.createElement('span'); close.textContent = '✕'; close.style.cssText = 'position:absolute;top:16px;right:20px;color:#fff;font-size:22px;cursor:pointer';
+            const img = document.createElement('img'); img.style.cssText = 'max-width:min(92vw,1400px);max-height:88vh;border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,.35);background:#fff';
+            overlay.appendChild(close); overlay.appendChild(img); document.body.appendChild(overlay);
+            let list = [], idx = 0;
+            function open(listArg, i) { list = listArg; idx = i; img.src = list[idx].src; overlay.style.display = 'flex' }
+            function closeFn() { overlay.style.display = 'none'; img.removeAttribute('src') }
+            document.addEventListener('click', e => {
+                const el = e.target.closest('.marquee img');
+                if (el) {
+                    const row = el.closest('.marquee');
+                    const imgs = [...row.querySelectorAll('img')];
+                    const half = imgs.length / 2; // 前半段为原始序列
+                    const base = imgs.slice(0, half);
+                    open(base, Math.max(0, base.indexOf(el)));
+                }
+                if (e.target === overlay || e.target === close) closeFn();
+            });
+            window.addEventListener('keydown', e => {
+                if (overlay.style.display !== 'flex') return;
+                if (e.key === 'Escape') return closeFn();
+                if (e.key === 'ArrowRight') { idx = (idx + 1) % list.length; img.src = list[idx].src }
+                if (e.key === 'ArrowLeft') { idx = (idx - 1 + list.length) % list.length; img.src = list[idx].src }
+            });
+        })();
+    </script>
+    <script src="../assets/js/main.js"></script>
+
+    <style>
+        :root {
+            --bg: #f2ede4;
+            --surface: #f8f4ed;
+            --ink: #2d1b0f;
+            --muted: #7a5a1a;
+            --brand: #c17309;
+            --brand-weak: #e6a623;
+            --line: #dcc5a1;
+            --card: #faf7f0;
+            --sand: #d4b896;
+            --earth: #a0470a;
+            --warm: #e68a00;
+            --sand-light: #e8d5c4;
+            --sand-dark: #c19a6b;
+            --desert: #b8956f;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg) 0%, var(--sand-light) 50%, var(--sand) 100%);
+            background-attachment: fixed;
+            color: var(--ink);
+        }
+
+        .section {
+            background: linear-gradient(135deg, var(--surface) 0%, var(--card) 100%);
+            border-radius: 20px;
+            margin: 20px auto;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(45, 27, 15, 0.12);
+            max-width: 1128px;
+        }
+
+        h1,
+        h2 {
+            color: var(--earth);
+            font-size: 28px;
+            margin: 32px 0 16px 0;
+        }
+    </style>
+</body>
+
+</html>
